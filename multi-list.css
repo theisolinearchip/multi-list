@@ -1,0 +1,73 @@
+/**
+* multi-list.js is a jQuery plugin to turn a <ul> element into a multiple selectable list
+*
+* Author: Albert Gonzalez - http://www.albertgonzalez.coffee
+* 
+* Under a UNLICENSE (http://unlicense.org/)
+*/
+
+/* Main ul container */
+.ml-container {
+	margin: 0 10px;
+}
+
+/* List */
+.ml-ul {
+	overflow:auto;
+	list-style-type: none;
+	padding: 0;
+	margin-top: 10px;
+	max-height: 340px;
+}
+
+/* List input item */
+.ml-input-container .ml-input-filter {
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555555;
+	background-color: #FFFFFF;
+	background-image: none;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+}
+
+/* List item */
+.ml-li {
+	border-bottom: 1px solid #D0DBE0;
+	padding: 10px 10px 7px 10px;
+	margin-right: 10px;
+}
+
+.ml-li label {
+	width: 100%;
+	font-size: 16px;
+	font-family: sans-serif;
+
+	/* Non selectable */
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+.ml-li input {
+	margin-right: 10px;
+}
+
+.ml-disabled-element-li {
+	background-color: #E4E8EA;
+}
+
+.ml-disabled-element-li label {
+	padding-left: 23px;
+}
+
+.ml-hide {
+	display: none !important;
+}
