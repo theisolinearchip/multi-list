@@ -7,14 +7,14 @@ A jQuery plugin to turn an unordered list into a multiple selectable list.
 You'll need and \<ul> with some entries and a unique **value** for each item:
 
 ```markdown
-<id="list"><br />
-  <li value="eur">Europe</li>
-  <li value="oce">Oceania</li>
-  <li value="afr">Africa</li>
-  <li value="asi">Asia</li>
-  <li value="nam">North Americ</li>
-  <li value="sam">South America</li>
-  <li value="mea">Middle East</li>
+<ul>
+  <li value='eur'>Europe</li>
+  <li value='oce'>Oceania</li>
+  <li value='afr'>Africa</li>
+  <li value='asi'>Asia</li>
+  <li value='nam'>North Americ</li>
+  <li value='sam'>South America</li>
+  <li value='mea'>Middle East</li>
 </ul>
 ```
 
