@@ -1,6 +1,9 @@
 ## multi-list
 
 A jQuery plugin to turn an unordered list into a multiple selectable list.
+Written by [Albert Gonzalez](http://albertgonzalez.coffee) and released under [the Unlicense](http://unlicense.org/).
+
+[See it in action!](http://albertgonzalez.coffee/projects/multi-list/)
 
 ### Starting
 
