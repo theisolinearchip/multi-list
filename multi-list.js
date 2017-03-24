@@ -160,6 +160,7 @@
 
 		} else if (action === "remove") {
 			if ($("#" + main_id + "_container").length > 0) {
+				$("#" + main_id + "_container").parent().append("<ul id='" + main_id + "'></ul>");
 				$("#" + main_id + "_container").remove();
 			}
 
