@@ -20,6 +20,22 @@
 	max-height: 340px;
 }
 
+.ml-ul label {
+	width: 100%;
+	font-size: 16px;
+	font-family: sans-serif;
+	cursor: pointer;
+
+	/* Non selectable */
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
 /* List input item */
 .ml-input-container .ml-input-filter {
 	width: 100%;
@@ -39,21 +55,6 @@
 	border-bottom: 1px solid #D0DBE0;
 	padding: 10px 10px 7px 10px;
 	margin-right: 10px;
-}
-
-.ml-li label {
-	width: 100%;
-	font-size: 16px;
-	font-family: sans-serif;
-
-	/* Non selectable */
-	-webkit-user-select: none; /* Chrome/Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-
-	/* Rules below not implemented in browsers yet */
-	-o-user-select: none;
-	user-select: none;
 }
 
 .ml-li input {

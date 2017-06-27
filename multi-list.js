@@ -102,8 +102,9 @@
 						$(element).addClass(main_id + "_list_item");
 
 						// Append the checkbox inside the <li>
-						$(element).html("<label><input type='checkbox' data-full_text='" + $(element).text() + "' id='" + main_id + "_checkbox_" + $(element).attr("value") + "'>"
-										+ "<span>" + $(element).text() + "</span></label>");
+						$(element).html("<input type='checkbox' data-full_text='" + $(element).text() + "' id='" + main_id + "_checkbox_" + $(element).attr("value") + "'>"
+										+ "<span>" + $(element).text() + "</span>");
+						$(element).wrap("<label></label>");
 
 						// Bind the onclick event on the <li> element
 						$(element).find("input").change(function() {
