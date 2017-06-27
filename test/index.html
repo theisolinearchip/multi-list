@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		
+		<title>multi-list</title>
+
+		<link rel="stylesheet" href="multi-list.css" rel="stylesheet">
+
+		<style>
+
+			body {
+				padding: 10px;
+				font-family: sans-serif;
+			}
+
+			.list_container {
+				width: 50%;
+				margin: 10px;
+				padding: 20px;
+
+				background-color: #F7F7F7;
+			}
+
+			.options_container {
+				margin: 10px;
+			}
+
+			.code {
+				margin: 10px;
+				padding: 20px;
+				font-family: monospace;
+
+				background-color: #E2E2E2;
+			}
+
+		</style>
+			
+	</head>
+
+	<body>
+
+		<h1>multi-list</h1>
+
+		<p>A jQuery plugin to turn an unordered list into a multiple selectable list. <a href="https://github.com/koopaconan/multi-list">Source code available on Github</a>.</p>
+
+		<p>Turns an <i>unordered list</i> like this one:</p>
+
+		<div class="list_container">
+
+			<ul>
+				<li value="eur">Europe</li>
+				<li value="oce">Oceania</li>
+				<li value="afr">Africa</li>
+				<li value="asi">Asia</li>
+				<li value="nam">North America</li>
+				<li value="sam">South America</li>
+				<li value="mea">Middle East</li>
+			</ul>
+
+		</div>
+
+		<p>into a list with multiple selection options and a filter:</p>
+
+		<div class="list_container">
+
+			<ul id="list">
+				<li value="eur">Europe</li>
+				<li value="oce">Oceania</li>
+				<li value="afr">Africa</li>
+				<li value="asi">Asia</li>
+				<li value="nam">North America</li>
+				<li value="sam">South America</li>
+				<li value="mea">Middle East</li>
+			</ul>
+
+		</div>
+
+		<p>Multiple options and methods allowed!</p>
+
+		<div class="options_container">
+			<button onclick="$('#list').multiList('selectAll'); return false;" >Select all</button>
+			<button onclick="$('#list').multiList('unselectAll'); return false;" >Deselect all</button>
+		</div>
+
+		<div class="options_container">
+			<button onclick="$('#list').multiList('select', 'asi'); return false;" >Select Asia</button>
+			<button onclick="$('#list').multiList('unselect', 'asi'); return false;" >Unselect Asia</button>
+		</div>
+
+		<div class="options_container">
+			<button onclick="$('#list').multiList('hide', 'oce'); return false;" >Hide Oceania</button>
+			<button onclick="$('#list').multiList('show', 'oce'); return false;" >Show Oceania</button>
+			<button onclick="$('#list').multiList('hide', ['nam', 'sam']); return false;" >Hide America</button>
+			<button onclick="$('#list').multiList('show', ['nam', 'sam']); return false;" >Show America</button>
+			<button onclick="$('#list').multiList('hideAll'); return false;" >Hide All</button>
+			<button onclick="$('#list').multiList('showAll'); return false;" >Show All</button>
+		</div>
+
+		<div class="options_container">
+			<button onclick="$('#list').multiList('disable', 'afr'); return false;" >Disable Africa</button>
+			<button onclick="$('#list').multiList('enable', 'afr'); return false;" >Enable Africa</button>
+		</div>
+
+		<div class="options_container">
+			<button onclick="$('#list').multiList('setName', 'mea', 'Middle-Earth'); $('#list').trigger('multiList.elementChecked'); return false;" >Change "Middle East" name for "Middle-Earth"</button>
+		</div>
+
+		<div class="options_container">
+			<p><strong>Selected elements:</strong> <span id="selected_elements"></span></p>
+			<p><strong>Unselected elements (value only):</strong> <span id="unselected_elements"></span></p>
+		</div>
+
+		<br />
+
+		<a href="http://albertgonzalez.coffee">< Back</a>
+
+		<script src="jquery.min.js"></script>
+		<script src="multi-list.js"></script>
+
+		<script>
+
+			$(document).ready(function() {
+				$("#list").multiList();
+
+				// elementChecked
+				// "value" (the "value" attr from the li items) and "text (the full text)
+				$("#list").on("multiList.elementChecked", function(event, value, text) {
+					set_li();
+				});
+
+				// elementUnchecked
+				// "value" (the "value" attr from the li items) and "text (the full text)
+				$("#list").on("multiList.elementUnchecked", function(event, value, text) {
+					set_li();
+				});
+
+				$("#list").trigger("multiList.elementChecked");
+
+			});
+
+			function set_li() {
+				var selected_text = "";
+				var selected_elements = $("#list").multiList("getSelectedFull");
+				if (selected_elements.length > 0) {
+					for (var i = 0; i < selected_elements.length; i++) {
+						selected_text += selected_elements[i][1] + " (<i>" + selected_elements[i][0] + "</i>)";
+						if (i < selected_elements.length - 1) selected_text += ", ";
+					}
+				}
+				$("#selected_elements").html(selected_text);
+
+				var unselected_text = "";
+				var unselected_elements = $("#list").multiList("getUnselected");
+				if (unselected_elements.length > 0) {
+					for (var i = 0; i < unselected_elements.length; i++) {
+						unselected_text += "<i>" + unselected_elements[i] + "</i>";
+						if (i < unselected_elements.length - 1) unselected_text += ", ";
+					}
+				}
+				$("#unselected_elements").html(unselected_text);
+			}
+
+		</script>
+
+	</body>
+
+</html>
