@@ -104,7 +104,7 @@
 						// Append the checkbox inside the <li>
 						$(element).html("<input type='checkbox' data-full_text='" + $(element).text() + "' id='" + main_id + "_checkbox_" + $(element).attr("value") + "'>"
 										+ "<span>" + $(element).text() + "</span>");
-						$(element).wrap("<label></label>");
+						$(element).wrap("<label style='display: inherit !important;'></label>");
 
 						// Bind the onclick event on the <li> element
 						$(element).find("input").change(function() {
