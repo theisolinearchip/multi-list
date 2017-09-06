@@ -1,0 +1,27 @@
+{
+  "name": "multi-list",
+  "version": "1.0.0",
+  "description": "A jQuery plugin to turn an unordered list into a multiple selectable list",
+  "main": "multi-list.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koopaconan/multi-list.git"
+  },
+  "keywords": [
+    "jquery",
+    "list",
+    "multi-list"
+  ],
+  "author": "Albert Gonzalez",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/koopaconan/multi-list/issues"
+  },
+  "homepage": "https://github.com/koopaconan/multi-list#readme"
+}
