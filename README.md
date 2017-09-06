@@ -5,6 +5,14 @@ Written by [Albert Gonzalez](http://albertgonzalez.coffee) and released under [t
 
 [See it in action!](http://albertgonzalez.coffee/projects/multi-list/)
 
+### Install
+
+Download the *.js* and *.css* files or install them using **npm**:
+
+```markdown
+npm install multi-list
+```
+
 ### Starting
 
 You'll need and \<ul> with some entries and a unique **value** for each item:
