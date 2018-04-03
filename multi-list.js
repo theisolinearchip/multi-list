@@ -209,13 +209,13 @@
 			}
 		} else if (action === "selectAll") {
 			if ($("#" + main_id + "_input_values").length != 0) {
-				$("#" + main_id + " li:not(.hide) input:enabled:not(:checked)").each(function(index, value) {
+				$("#" + main_id + " li:not(.ml-hide) input:enabled:not(:checked)").each(function(index, value) {
 					$(value).prop('checked', true).trigger("change");
 				});
 			}
 		} else if (action === "unselectAll") {
 			if ($("#" + main_id + "_input_values").length != 0) {
-				$("#" + main_id + " li:not(.hide) input:enabled:checked").each(function(index, value) {
+				$("#" + main_id + " li:not(.ml-hide) input:enabled:checked").each(function(index, value) {
 					$(value).prop('checked', false).trigger("change");
 				});
 			}
