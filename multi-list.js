@@ -135,7 +135,7 @@
 							$("#" + main_id + "_input_values").val(selected_array.toString());
 
 							// Trigger events if proceed
-							// (we do it BEFORE the _input_values field is setted, so the events will work
+							// (we do it BEFORE the _input_values field is set, so the events will work
 							// with the current array and not with the old one)
 
 							if (trigger_unchecked) {
